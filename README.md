@@ -5,9 +5,9 @@ Trabajo Final Integrador de Programación en Python.
 
 ## Integrantes
 
-Gonzalez, Valentina.
-Menendez, Ignacio Manuel.
-Pareja Bruno, María del Pilar.
+* Gonzalez, Valentina.
+* Menendez, Ignacio Manuel.
+* Pareja Bruno, María del Pilar.
 
 ## Comisión
 
