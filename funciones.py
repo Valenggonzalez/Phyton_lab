@@ -74,4 +74,17 @@ def mostrar_disponibles():
 
 
 def mostrar_estadisticas():
-    print("Función mostrar estadísticas")
+
+    print("\n===== ESTADÍSTICAS =====")
+
+    print("Vehículos atendidos:", vehiculos_atendidos)
+    print("Recaudación total: $", recaudacion_total)
+
+    if vehiculos_atendidos > 0:
+
+        promedio = total_horas / vehiculos_atendidos
+
+        print("Tiempo promedio de permanencia:", promedio, "horas")
+
+    else:
+        print("Todavía no se registraron egresos.")
