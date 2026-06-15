@@ -20,9 +20,36 @@ def ingresar_vehiculo():
 
     print("Vehículo registrado correctamente.")    
 
-
 def registrar_egreso():
-    print("Función registrar egreso")
+
+    global vehiculos_atendidos
+    global recaudacion_total
+    global total_horas
+
+    patente = input("Ingrese la patente: ")
+
+    if patente not in vehiculos:
+        print("Error: vehículo no encontrado.")
+        return
+
+    hora_salida = int(input("Ingrese la hora de salida (0-23): "))
+
+    hora_ingreso = vehiculos[patente]
+
+    horas = hora_salida - hora_ingreso
+
+    importe = horas * 1000
+
+    print("Horas de permanencia:", horas)
+    print("Importe a pagar: $", importe)
+
+    vehiculos_atendidos += 1
+    recaudacion_total += importe
+    total_horas += horas
+
+    del vehiculos[patente]
+
+    print("Egreso registrado correctamente.")
 
 
 def mostrar_estacionados():
