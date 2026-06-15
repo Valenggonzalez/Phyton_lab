@@ -51,7 +51,6 @@ def registrar_egreso():
 
     print("Egreso registrado correctamente.")
 
-
 def mostrar_estacionados():
 
     if len(vehiculos) == 0:
