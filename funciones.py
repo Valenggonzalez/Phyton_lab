@@ -36,9 +36,15 @@ def mostrar_estacionados():
     for patente in vehiculos:
         print(patente)
 
-
 def mostrar_disponibles():
-    print("Función mostrar disponibles")
+
+    ocupados = len(vehiculos)
+
+    disponibles = CAPACIDAD - ocupados
+
+    print("\nCapacidad total:", CAPACIDAD)
+    print("Lugares ocupados:", ocupados)
+    print("Lugares disponibles:", disponibles)
 
 
 def mostrar_estadisticas():
