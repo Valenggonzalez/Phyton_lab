@@ -8,6 +8,10 @@ total_horas = 0
 
 def ingresar_vehiculo():
 
+    if len(vehiculos) >= CAPACIDAD:
+        print("Error: no hay lugares disponibles.")
+        return
+
     patente = input("Ingrese la patente: ")
 
     if patente in vehiculos:
@@ -16,9 +20,14 @@ def ingresar_vehiculo():
 
     hora_ingreso = int(input("Ingrese la hora de ingreso (0-23): "))
 
+    if hora_ingreso < 0 or hora_ingreso > 23:
+        print("Error: hora inválida.")
+        return
+
     vehiculos[patente] = hora_ingreso
 
-    print("Vehículo registrado correctamente.")    
+    print("Vehículo registrado correctamente.")
+
 
 def registrar_egreso():
 
@@ -34,7 +43,15 @@ def registrar_egreso():
 
     hora_salida = int(input("Ingrese la hora de salida (0-23): "))
 
+    if hora_salida < 0 or hora_salida > 23:
+        print("Error: hora inválida.")
+        return
+
     hora_ingreso = vehiculos[patente]
+
+    if hora_salida < hora_ingreso:
+        print("Error: la hora de salida no puede ser menor que la de ingreso.")
+        return
 
     horas = hora_salida - hora_ingreso
 
@@ -50,7 +67,8 @@ def registrar_egreso():
     del vehiculos[patente]
 
     print("Egreso registrado correctamente.")
-
+   
+   
 def mostrar_estacionados():
 
     if len(vehiculos) == 0:
