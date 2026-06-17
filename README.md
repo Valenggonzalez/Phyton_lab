@@ -1,4 +1,4 @@
-# Phyton_lab
+# Python_lab
 Trabajo Final Integrador de Programación en Python.
 
 # Sistema de Gestión de Estacionamiento.
